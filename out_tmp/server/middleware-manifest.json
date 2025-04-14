@@ -1,0 +1,32 @@
+{
+  "version": 3,
+  "middleware": {
+    "/": {
+      "files": [
+        "server/edge-runtime-webpack.js",
+        "server/src/middleware.js"
+      ],
+      "name": "src/middleware",
+      "page": "/",
+      "matchers": [
+        {
+          "regexp": "^\\/StudyGeniusAI(?:\\/(_next\\/data\\/[^/]{1,}))?(?:\\/((?!api|_next\\/static|_next\\/image|favicon.ico).*))(\\.json)?[\\/#\\?]?$",
+          "originalSource": "/((?!api|_next/static|_next/image|favicon.ico).*)"
+        }
+      ],
+      "wasm": [],
+      "assets": [],
+      "env": {
+        "__NEXT_BUILD_ID": "tNoSSrTuHWX8fNTHYHXKl",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "z5o7n1RmfY2CaV7IgV9In2sZpel/vWoVUCn5a3nz0hY=",
+        "__NEXT_PREVIEW_MODE_ID": "78a7c375487d8578d45f4ac7716abf19",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "61cd99c1b9345dcb863ef2d185f013a2bc8f336a32fc2e02fb26f01882016c3a",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "b2a28895f91c536fd69111c1df4edf2539b9eb3d663843b29e6e2405db9ed5eb"
+      }
+    }
+  },
+  "functions": {},
+  "sortedMiddleware": [
+    "/"
+  ]
+}

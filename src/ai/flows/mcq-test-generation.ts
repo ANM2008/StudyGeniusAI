@@ -1,4 +1,5 @@
-'use server';
+// Commented out for static export build
+// 'use server';
 /**
  * @fileOverview Generates multiple-choice questions (MCQs) based on syllabus content.
  *

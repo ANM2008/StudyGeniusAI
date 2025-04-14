@@ -1,4 +1,5 @@
-'use server';
+// Commented out for static export build
+// 'use server';
 /**
  * @fileOverview Study guide generation AI agent.
  *

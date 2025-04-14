@@ -7,7 +7,8 @@
  * - GenerateFlashcardsOutput - The return type for the generateFlashcards function.
  */
 
-'use server';
+// Commented out for static export build
+// 'use server';
 
 import {ai} from '@/ai/ai-instance';
 import {z} from 'genkit';
