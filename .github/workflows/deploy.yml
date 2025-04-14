@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]  # Set this to your default branch
+    branches: [ main ]
   workflow_dispatch:
 
 permissions:
@@ -21,7 +21,7 @@ jobs:
           node-version: '20'
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build
         run: npm run build
@@ -29,5 +29,5 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: out_tmp # The folder the action should deploy
-          branch: gh-pages # The branch the action should deploy to
+          folder: out
+          branch: gh-pages
