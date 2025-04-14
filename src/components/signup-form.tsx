@@ -17,7 +17,7 @@ import { Input } from '@/components/ui/input'
 import { Loader2 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { useRouter } from 'next/navigation'
-import { supabase } from '@/lib/supabase/client'
+import { getSupabaseBrowserClient } from '@/lib/supabase/client'
 import Link from 'next/link'
 
 const formSchema = z.object({
@@ -51,6 +51,7 @@ export function SignUpForm({
       setIsLoading(true)
       setError(null)
       
+      const supabase = getSupabaseBrowserClient()
       const { data, error } = await supabase.auth.signUp({
         email: values.email,
         password: values.password,
@@ -77,6 +78,7 @@ export function SignUpForm({
       setIsLoading(true)
       setError(null)
 
+      const supabase = getSupabaseBrowserClient()
       const { data, error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {

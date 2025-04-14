@@ -40,7 +40,7 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { supabase } from "@/lib/supabase/client"
+import { getSupabaseBrowserClient } from "@/lib/supabase/client"
 
 const SIDEBAR_COOKIE_NAME = "sidebar_state"
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7
@@ -405,12 +405,14 @@ const SidebarFooter = React.forwardRef<
   React.useEffect(() => {
     // Get the current user's session when component mounts
     const getUserEmail = async () => {
+      const supabase = getSupabaseBrowserClient()
       const { data: { session } } = await supabase.auth.getSession()
       setUserEmail(session?.user?.email || null)
     }
     getUserEmail()
 
     // Subscribe to auth state changes
+    const supabase = getSupabaseBrowserClient()
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       setUserEmail(session?.user?.email || null)
     })
@@ -421,6 +423,7 @@ const SidebarFooter = React.forwardRef<
   }, [])
 
   const handleLogout = async () => {
+    const supabase = getSupabaseBrowserClient()
     await supabase.auth.signOut()
     setIsLogoutDialogOpen(false)
     window.location.href = "/login"
@@ -868,6 +871,7 @@ function SidebarNavigation({ className, navItems }: SidebarProps) {
   const [isLogoutDialogOpen, setIsLogoutDialogOpen] = React.useState(false)
 
   const handleLogout = async () => {
+    const supabase = getSupabaseBrowserClient()
     await supabase.auth.signOut()
     setIsLogoutDialogOpen(false)
     window.location.href = "/login"
