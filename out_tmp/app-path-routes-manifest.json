@@ -3,10 +3,10 @@
   "/favicon.ico/route": "/favicon.ico",
   "/auth/callback/route": "/auth/callback",
   "/page": "/",
+  "/dashboard/page": "/dashboard",
   "/generate/page": "/generate",
   "/signup/page": "/signup",
-  "/dashboard/page": "/dashboard",
-  "/flashcards/[topicId]/page": "/flashcards/[topicId]",
   "/study-guide/[topicId]/page": "/study-guide/[topicId]",
+  "/flashcards/[topicId]/page": "/flashcards/[topicId]",
   "/login/page": "/login"
 }

@@ -30,7 +30,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/generate": {
+    "/login": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -43,8 +43,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/generate",
-      "dataRoute": "/generate.rsc",
+      "srcRoute": "/login",
+      "dataRoute": "/login.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -54,7 +54,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/signup": {
+    "/": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -67,8 +67,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/signup",
-      "dataRoute": "/signup.rsc",
+      "srcRoute": "/",
+      "dataRoute": "/index.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -102,7 +102,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/login": {
+    "/signup": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -115,80 +115,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/login",
-      "dataRoute": "/login.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/study-guide/placeholder1": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/study-guide/[topicId]",
-      "dataRoute": "/study-guide/placeholder1.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/study-guide/placeholder2": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/study-guide/[topicId]",
-      "dataRoute": "/study-guide/placeholder2.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/study-guide/placeholder3": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/study-guide/[topicId]",
-      "dataRoute": "/study-guide/placeholder3.rsc",
+      "srcRoute": "/signup",
+      "dataRoute": "/signup.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -270,7 +198,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/": {
+    "/generate": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -283,8 +211,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/",
-      "dataRoute": "/index.rsc",
+      "srcRoute": "/generate",
+      "dataRoute": "/generate.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -293,10 +221,8 @@
         "x-next-revalidated-tags",
         "x-next-revalidate-tag-token"
       ]
-    }
-  },
-  "dynamicRoutes": {
-    "/study-guide/[topicId]": {
+    },
+    "/study-guide/placeholder1": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -308,10 +234,9 @@
           "value": "multipart/form-data;.*"
         }
       ],
-      "routeRegex": "^/study\\-guide/([^/]+?)(?:/)?$",
-      "dataRoute": "/study-guide/[topicId].rsc",
-      "fallback": null,
-      "dataRouteRegex": "^/study\\-guide/([^/]+?)\\.rsc$",
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/study-guide/[topicId]",
+      "dataRoute": "/study-guide/placeholder1.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -321,6 +246,56 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/study-guide/placeholder2": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/study-guide/[topicId]",
+      "dataRoute": "/study-guide/placeholder2.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/study-guide/placeholder3": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/study-guide/[topicId]",
+      "dataRoute": "/study-guide/placeholder3.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    }
+  },
+  "dynamicRoutes": {
     "/flashcards/[topicId]": {
       "experimentalBypassFor": [
         {
@@ -345,12 +320,37 @@
         "x-next-revalidated-tags",
         "x-next-revalidate-tag-token"
       ]
+    },
+    "/study-guide/[topicId]": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "routeRegex": "^/study\\-guide/([^/]+?)(?:/)?$",
+      "dataRoute": "/study-guide/[topicId].rsc",
+      "fallback": null,
+      "dataRouteRegex": "^/study\\-guide/([^/]+?)\\.rsc$",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
     }
   },
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "3edbe8b7f834d1d51660e44dab9dfb9b",
-    "previewModeSigningKey": "fad3abdfc8fda0cf885be862c3902b22bc00b45d24c7d79c32f18812e54ac415",
-    "previewModeEncryptionKey": "03c1eda8fc57dfc594d20c1af3e98f5af1808bb99b82c82b1d1e738187c14448"
+    "previewModeId": "20affe0a67df803e7d111d87c6da2dc5",
+    "previewModeSigningKey": "2571ffdd1d33d216bc0a0d2a102b001295b9d5807d76924644c8b2e83acdb404",
+    "previewModeEncryptionKey": "ca7e3baf5d49bd1198210b821f1cc0879b7188cebd14aa634f01f5f9da32946c"
   }
 }

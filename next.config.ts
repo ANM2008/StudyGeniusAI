@@ -5,6 +5,8 @@ const nextConfig = {
     unoptimized: true,
   },
   distDir: 'out_tmp',
+  env: {
+  },
 }
 
 module.exports = nextConfig;
