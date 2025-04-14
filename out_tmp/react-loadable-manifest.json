@@ -51,5 +51,9 @@
     "files": [
       "static/chunks/341.1a6fc338121ee98d.js"
     ]
+  },
+  "components\\layouts\\main-layout.tsx -> @/components/ui/sidebar": {
+    "id": 60286,
+    "files": []
   }
 }
