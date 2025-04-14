@@ -37,7 +37,8 @@ export type GenerateMcqTestOutput = z.infer<typeof GenerateMcqTestOutputSchema>;
 export async function generateMcqTest(
   input: GenerateMcqTestInput
 ): Promise<GenerateMcqTestOutput> {
-  return generateMcqTestFlow(input);
+  // Explicitly cast the result to the expected type
+  return (await generateMcqTestFlow(input)) as GenerateMcqTestOutput;
 }
 
 const prompt = ai.definePrompt({
@@ -79,17 +80,15 @@ describe('A list of multiple-choice questions with options and correct answers.'
   `,
 });
 
-const generateMcqTestFlow = ai.defineFlow<
-  typeof GenerateMcqTestInputSchema,
-  typeof GenerateMcqTestOutputSchema
->(
+const generateMcqTestFlow = ai.defineFlow(
   {
     name: 'generateMcqTestFlow',
     inputSchema: GenerateMcqTestInputSchema,
     outputSchema: GenerateMcqTestOutputSchema,
   },
-  async input => {
+  async (input: GenerateMcqTestInput): Promise<GenerateMcqTestOutput> => { // Add explicit return type promise
     const {output} = await prompt(input);
-    return output!;
+    // Cast output to the expected type
+    return output as GenerateMcqTestOutput;
   }
 );

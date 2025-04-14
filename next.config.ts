@@ -1,11 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
   basePath: '/StudyGeniusAI', // Replace with your repository name
   images: {
     unoptimized: true,
   },
-  distDir: 'out',
+  distDir: 'out_tmp',
 }
 
 module.exports = nextConfig;

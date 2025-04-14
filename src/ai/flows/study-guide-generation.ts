@@ -68,19 +68,17 @@ Example format:
 `,
 });
 
-const generateStudyGuideFlow = ai.defineFlow<
-  typeof GenerateStudyGuideInputSchema,
-  typeof GenerateStudyGuideOutputSchema
->({
+const generateStudyGuideFlow = ai.defineFlow({
   name: 'generateStudyGuideFlow',
   inputSchema: GenerateStudyGuideInputSchema,
   outputSchema: GenerateStudyGuideOutputSchema,
 },
-async input => {
+async (input: GenerateStudyGuideInput) => {
   const {output} = await prompt(input);
   return output!;
 });
 
 export async function generateStudyGuide(input: GenerateStudyGuideInput): Promise<GenerateStudyGuideOutput> {
-  return generateStudyGuideFlow(input);
+  // Explicitly cast the result to the expected type
+  return (await generateStudyGuideFlow(input)) as GenerateStudyGuideOutput;
 }
