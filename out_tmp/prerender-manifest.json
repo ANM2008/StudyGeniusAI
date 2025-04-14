@@ -30,7 +30,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/": {
+    "/generate": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -43,56 +43,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/",
-      "dataRoute": "/index.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/login": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/login",
-      "dataRoute": "/login.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/dashboard": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/dashboard",
-      "dataRoute": "/dashboard.rsc",
+      "srcRoute": "/generate",
+      "dataRoute": "/generate.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -126,7 +78,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/generate": {
+    "/dashboard": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -139,8 +91,32 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/generate",
-      "dataRoute": "/generate.rsc",
+      "srcRoute": "/dashboard",
+      "dataRoute": "/dashboard.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/login": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/login",
+      "dataRoute": "/login.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -293,6 +269,30 @@
         "x-next-revalidated-tags",
         "x-next-revalidate-tag-token"
       ]
+    },
+    "/": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/",
+      "dataRoute": "/index.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
     }
   },
   "dynamicRoutes": {
@@ -349,8 +349,8 @@
   },
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "be282a87bd5aed1c8bb56805bfdca759",
-    "previewModeSigningKey": "3b7b3698e0ddab2dfc79d88c9a8da6a7101c08e6e18cde317d03e02db7a4d812",
-    "previewModeEncryptionKey": "9b214fe2c906a68f266bdc370b5306b749883dadbe70de49a8f444da448d5ca4"
+    "previewModeId": "3edbe8b7f834d1d51660e44dab9dfb9b",
+    "previewModeSigningKey": "fad3abdfc8fda0cf885be862c3902b22bc00b45d24c7d79c32f18812e54ac415",
+    "previewModeEncryptionKey": "03c1eda8fc57dfc594d20c1af3e98f5af1808bb99b82c82b1d1e738187c14448"
   }
 }
